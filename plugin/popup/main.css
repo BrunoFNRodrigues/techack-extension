@@ -1,0 +1,40 @@
+html {
+  display: flex;
+  width: 45rem;
+  max-height: 30rem;
+  font-family: "Courier New", Times, serif;
+}
+body {
+  display: flex;
+  width: inherit;
+  height: inherit;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  background-color: aliceblue;
+  font-family: inherit;
+  font-size: 1.25rem;
+}
+  
+summary{
+  width: inherit;
+  height: inherit;
+  font-family: inherit;
+}
+
+details{
+  padding-bottom: 1rem;
+  padding-left: 1rem;
+  font-family: inherit;
+}
+
+hr {
+  width: 80%;
+  border: 0;
+  border-top: 2px solid brown;
+}
+
+.title{
+  align-self: center;
+  font-family: inherit;
+}

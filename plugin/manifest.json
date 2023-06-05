@@ -1,8 +1,8 @@
 {
 
-  "description": "Adds a browser action icon to the toolbar. Click the button to choose a beast. The active tab's body content is then replaced with a picture of the chosen beast. See https://developer.mozilla.org/en-US/Add-ons/WebExtensions/Examples#beastify",
+  "description": "Firefox extension to check the security and privacy level of a web page",
   "manifest_version": 2,
-  "name": "GoodName",
+  "name": "CookieGuardian",
   "version": "1.0",
 
   "permissions": [
@@ -11,12 +11,27 @@
     "tabs",
     "storage",
     "http://*/*",
-    "https://*/*"
+    "https://*/*",
+    "webRequest",
+    "contextualIdentities",
+    "notifications"
   ],
 
+  "icons": {
+    "32": "icons/cookie-32.png",
+    "64": "icons/cookie-64.png"
+  },
+
   "browser_action": {
-    "default_icon": "icons/beasts-32.png",
-    "default_title": "GoodName",
-    "default_popup": "popup/choose_beast.html"
-  }
+    "browser_style": true,
+    "default_title": "Check web page cookies and security",
+    "default_popup": "popup/main.html"
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*/*"],
+      "js": ["popup/main.js"]
+    }
+  ]
 }
